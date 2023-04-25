@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-
+const port = process.env.PORT || 9000
 server.use(express.json());
 
 server.get('/hello', (req, res) => {
@@ -11,6 +11,6 @@ server.use('*', (req, res) => {
   res.json({ message: 'API is UP!' })
 });
 
-server.listen(9000, () => {
+server.listen(port, () => {
   console.log("\n*** Server Running on http://localhost:9000 ***\n");
 });
